@@ -31,7 +31,7 @@ class Message extends Component {
         overflow: "visible",
         paddingLeft: "30px",
         width: "400px",
-        alighnItems: "center",
+        alignItems: "center",
         position: "relative",
       }}>
         <MessageHeader
@@ -68,7 +68,7 @@ class Page extends Component {
     this.state = {
       sortNewFirst: true,
       messages,
-      displayMessageCount: 5,
+      displayMessageCount: 6,
     }
   }
 
@@ -102,7 +102,8 @@ class Page extends Component {
     } else {
       messages.splice(removalIndex, 1);
     }
-    this.setState({messages: messages});
+    this.setState(previousState => ({messages: messages,
+                                     displayMessageCount: this.state.displayMessageCount - 1}));
   }
 
   render() {
