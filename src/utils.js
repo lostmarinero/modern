@@ -3,7 +3,6 @@ export function createUniqueIdentifier(message) {
   return `${message.uuid}:${message.content}`;
 }
 
-
 export function removeDuplicateMessages(messages) {
   return Object.values(messages.reduce((resultObj, message) => {
     resultObj[createUniqueIdentifier(message)] = message;
